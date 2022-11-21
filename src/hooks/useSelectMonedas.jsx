@@ -6,7 +6,8 @@ const useSelectMonedas = (label, opciones) => {
     const [state,setSate]= useState('')
   const SelectMonedas = () => (
     <>
-      <label className="block font-bold font-lato text-3xl my-2 text-white">{label}</label>
+ 
+      <label className="block font-bold font-lato text-3xl my-2 text-white" >  {label} </label>
       <select 
       
       value={state}

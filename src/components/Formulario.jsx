@@ -3,7 +3,8 @@ import { monedas } from "../data/monedas";
 import useSelectMonedas from "../hooks/useSelectMonedas";
 import { Alerta } from "./Alerta";
 
-export const Formulario = ({setMonedas}) => {
+
+export const Formulario = ({ setMonedas }) => {
   const [criptos, setCriptos] = useState([]);
   const [error, setError] = useState(false);
   const [moneda, SelectMonedas] = useSelectMonedas("Elige tu moneda", monedas);
@@ -42,8 +43,9 @@ export const Formulario = ({setMonedas}) => {
     }
     setError(false);
     setMonedas({
-      moneda,monedaCripto
-    })
+      moneda,
+      monedaCripto,
+    });
   };
 
   return (
