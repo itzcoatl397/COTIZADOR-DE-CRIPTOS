@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { monedas } from "../data/monedas";
 import useSelectMonedas from "../hooks/useSelectMonedas";
+import { Alerta } from "./Alerta";
 
-export const Formulario = () => {
+export const Formulario = ({setMonedas}) => {
   const [criptos, setCriptos] = useState([]);
   const [error, setError] = useState(false);
   const [moneda, SelectMonedas] = useSelectMonedas("Elige tu moneda", monedas);
@@ -39,16 +40,15 @@ export const Formulario = () => {
       setError(true);
       return;
     }
+    setError(false);
+    setMonedas({
+      moneda,monedaCripto
+    })
   };
 
   return (
     <div>
-      {error && (
-        <div className="bg-red-600 w-7/6 p-2 mb-5 rounded-full">
-        
-        <h2 className="text-white font-bold text-center uppercase">Complete Los campos</h2>
-        </div>
-      )}
+      {error && <Alerta mensaje={"Todos Los campos Son obligatorios"} />}
 
       <form onSubmit={handleSubmit}>
         <SelectMonedas />

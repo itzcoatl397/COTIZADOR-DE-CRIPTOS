@@ -1,13 +1,31 @@
-import { useState } from "react";
-import { BsCurrencyBitcoin } from "react-icons/all";
+import { useState, useEffect } from "react";
+
 import styled from "@emotion/styled";
 
 import ImagenCripto from "./img/imagen-criptos.png";
 import { Formulario } from "./components/Formulario";
 function App() {
-  const Hedding = (styled.h1 = `
- font-fon
- `);
+  const [monedas, setMonedas] = useState({});
+
+  useEffect(() => {
+    if (Object.keys(monedas).length) {
+
+      const  cotizarCripto = async () =>{
+        const url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${monedas.monedaCripto}&tsyms=${monedas.moneda}`
+
+        const response = await fetch(url);
+        const resp = await response.json()
+
+        console.log(resp.DISPLAY);
+
+        
+        
+      }    
+      cotizarCripto()  
+    }
+
+
+  }, [monedas]);
 
   return (
     <div className=" max-w-4xl w-11/12  mx-auto  lg:grid lg:grid-cols-2  lg:gap-x-8">
@@ -31,7 +49,7 @@ function App() {
         >
           Cotizador Criptomonedas{" "}
         </h1>
-        <Formulario />
+        <Formulario setMonedas={setMonedas} />
       </div>
     </div>
   );
