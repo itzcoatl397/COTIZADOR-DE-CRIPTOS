@@ -4,10 +4,10 @@ const Resultado = ({ resultado }) => {
   const { HIGHDAY, CHANGEPCT24HOUR, PRICE, IMAGEURL, LOWDAY, LASTUPDATE } =
     resultado;
   return (
-    <div className="container text-white   items-center   m-6 px-2 py-3  my-auto mx-auto ml-40 lg:ml-20 ">
+    <div className="container text-white   items-center   m-6 px-2 py-3    md:ml-auto lg:ml-20 ">
 
         <img 
-        className="bg-slate-500 rounded-full  w-3/6 block "
+        className="bg-slate-500 rounded-full  w-3/6 "
         src={`https://cryptocompare.com/${IMAGEURL}`} alt="Imagen Cripto" />
       <p className=" text-3xl mx-auto ">
         {" "}
