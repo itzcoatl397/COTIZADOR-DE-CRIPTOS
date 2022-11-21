@@ -1,3 +1,3 @@
 # COTIZADOR-DE-CRIPTOS
-Gerardo Itzcoatl
-### React 
+Link https://cotizador-de-criptos-virid.vercel.app/
+### App hecha Con react js 
